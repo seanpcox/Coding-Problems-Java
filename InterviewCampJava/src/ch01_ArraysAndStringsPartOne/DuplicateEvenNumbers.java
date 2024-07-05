@@ -1,10 +1,10 @@
+// @author: seanpcox
+
 package ch01_ArraysAndStringsPartOne;
 
 import java.util.Arrays;
 
 /*
-
-@author: seanpcox
 
 Question
 --------

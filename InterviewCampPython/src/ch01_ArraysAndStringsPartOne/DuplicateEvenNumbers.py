@@ -13,7 +13,7 @@ Example
 '''
 
 # Helper method to find last number in array i.e. not -1
-def getLastNumber(array):
+def getLastNumberIndex(array):
     for i in range(len(array) - 1, -1, -1):
         if array[i] >= 0:
             return i 
@@ -23,7 +23,7 @@ def duplicateEvenNumbers(array):
     # End pointer is where the next number will be placed
     endPointer = len(array) - 1
     # Start pointer is the last positive integer in the array
-    startPointer = getLastNumber(array)
+    startPointer = getLastNumberIndex(array)
     
     # For empty arrays return now
     if startPointer is None:

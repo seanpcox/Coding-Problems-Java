@@ -1,6 +1,6 @@
 // @author: seanpcox
 
-package ch01_ArraysAndStringsPartOne;
+package ch01_arraysAndStrings1;
 
 import java.util.Arrays;
 

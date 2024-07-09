@@ -244,6 +244,9 @@ Solution
 * If we can find no valid value for a position then we need to go back and try a different value for the previous position (backtracking)
 * If we can not get to the last position this way that means the puzzle is invalid and we throw an error
 * Row and Column positions are provided, but we need a calculation to find which box a particular row and column belongs to
+* Time Complexity worst case is O(n^(​n^2)​), where ​n​ is one dimension of the puzzle, in practice this is less due to contraints
+* Space Complexity is O(n^2), where ​n​ is one dimension of the puzzle .We use this space both on the recursion stack and on the checkers.
+
 
 Box Calculation
 ---------------

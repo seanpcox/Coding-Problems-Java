@@ -8,7 +8,7 @@ Design a solution for a Sudoku puzzle
 
 '''
 
-# We need to the math library for square root functionality
+# We need to use the math library for square root functionality
 import math
 
 # Global variables
@@ -144,6 +144,8 @@ empty4X4TestCase = [[0 for i in range(4)] for j in range(4)]
 
 empty9X9TestCase = [[0 for i in range(9)] for j in range(9)]
 
+empty16X16TestCase = [[0 for i in range(16)] for j in range(16)]
+
 valid4X4TestCase = [
     [1, 2, 0, 0],
     [3, 4, 0, 0],
@@ -177,7 +179,7 @@ invalid4X4TestCase2 = [
     [0, 0, 0, 1]
 ]
 
-testCases = [empty1X1TestCase, empty4X4TestCase, empty9X9TestCase, 
+testCases = [empty1X1TestCase, empty4X4TestCase, empty9X9TestCase, empty16X16TestCase,
              valid4X4TestCase, valid9X9TestCase, invalid4X4TestCase1, invalid4X4TestCase2]
 
 # Run Test Cases Through Solution
@@ -227,9 +229,10 @@ Clarifications
 Solution
 --------
 * We will use backtracking for this problem
+* We will solve the puzzle in-place in the input matrix
 * We will need to keep track of what values have already been used in each row, column, and box
 * We will need to store the fixed values in the input, so we do not override them when solving
-* We will use -1 to represent fixed values, 0 to represent unused values, and 1 to represent values we have already used in these stores
+* We will use negatives to represent fixed values in the matrix
 * For each empty position we will attempt the values 1 -> N (where N*N is the size of the puzzle)
 * We will only try values that have not already been used in that position's row, column, and box
 * If we can find no valid value for a position then we need to go back and try a different value for the previous position (backtracking)

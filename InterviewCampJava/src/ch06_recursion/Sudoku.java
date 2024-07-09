@@ -2,7 +2,7 @@
 
 package ch06_recursion;
 
-public class Suduko {
+public class Sudoku {
 
 	// TODO: Hard Level
 	// Memoization doesn't help here

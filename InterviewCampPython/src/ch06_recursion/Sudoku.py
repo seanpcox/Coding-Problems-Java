@@ -10,6 +10,8 @@ Design a solution for a Sudoku puzzle
 
 # We need to use the math library for square root functionality
 import math
+# Use numpy for arrays
+import numpy
 
 # Global variables
 sSize = 1
@@ -30,15 +32,15 @@ def initPuzzle(m):
     
     # Record used values in each row: -1 fixed, 0 available, 1 used
     global rVals 
-    rVals = [[False for i in range(sSize)] for j in range(sSize)]
+    rVals = numpy.zeros(shape=(sSize,sSize)).astype(bool)
     
     # Record used values in each column: -1 fixed, 0 available, 1 used
     global cVals 
-    cVals = [[False for i in range(sSize)] for j in range(sSize)]
+    cVals = numpy.zeros(shape=(sSize,sSize)).astype(bool)
     
     # Record used values in each box: -1 fixed, 0 available, 1 used
     global bVals 
-    bVals = [[False for i in range(sSize)] for j in range(sSize)]
+    bVals = numpy.zeros(shape=(sSize,sSize)).astype(bool)
     
     # Mark all values supplied with the puzzle
     markFixedValues(m)
@@ -138,22 +140,24 @@ Test Cases
 
 '''
 
-empty1X1TestCase = [[0]]
+empty1X1TestCase = numpy.zeros(shape=(1,1), dtype=int)
 
-empty4X4TestCase = [[0 for i in range(4)] for j in range(4)]
+empty4X4TestCase = numpy.zeros(shape=(4,4), dtype=int)
 
-empty9X9TestCase = [[0 for i in range(9)] for j in range(9)]
+empty9X9TestCase = numpy.zeros(shape=(9,9), dtype=int)
 
-empty16X16TestCase = [[0 for i in range(16)] for j in range(16)]
+empty16X16TestCase = numpy.zeros(shape=(16,16), dtype=int)
 
-valid4X4TestCase = [
+empty25X25TestCase = numpy.zeros(shape=(25,25), dtype=int)
+
+valid4X4TestCase = numpy.array([
     [1, 2, 0, 0],
     [3, 4, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0]
-]
+])
 
-valid9X9TestCase = [
+valid9X9TestCase = numpy.array([
     [5, 3, 0, 0, 7, 0, 0, 0, 0],
     [6, 0, 0, 1, 9, 5, 0, 0, 0],
     [0, 9, 8, 0, 0, 0, 0, 6, 0],
@@ -163,24 +167,25 @@ valid9X9TestCase = [
     [0, 6, 0, 0, 0, 0, 2, 8, 0],
     [0, 0, 0, 4, 1, 9, 0, 0, 5],
     [0, 0, 0, 0, 8, 0, 0, 7, 9]
-]
+])
 
-invalid4X4TestCase1 = [
+invalid4X4TestCase1 = numpy.array([
     [1, 2, 3, 0],
     [3, 4, 2, 1],
     [4, 3, 1, 2],
     [2, 1, 0, 4]
-]
+])
 
-invalid4X4TestCase2 = [
+invalid4X4TestCase2 = numpy.array([
     [0, 0, 0, 1],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 1]
-]
+])
 
-testCases = [empty1X1TestCase, empty4X4TestCase, empty9X9TestCase, empty16X16TestCase,
+testCases = [empty1X1TestCase, empty4X4TestCase, empty9X9TestCase, empty16X16TestCase, 
              valid4X4TestCase, valid9X9TestCase, invalid4X4TestCase1, invalid4X4TestCase2]
+
 
 # Run Test Cases Through Solution
 for testCase in testCases:
@@ -221,6 +226,7 @@ Clarifications
 -------------
 * Is this a classic 9x9 puzzle? It can be any N squared * N squared size puzzle. 
 * So (1^2) 1x1, (2^2) 4x4, (3^2) 9x9, (4^2) 16x16 etc? Yes
+* Can we assume the matrix will be of a correct size? Yes
 * Will there be pre-filled entries? There can be, or it may be empty to start
 * What will represent a non pre-filled position? 0
 * Will the input, with pre-filled values, always have a solution? No

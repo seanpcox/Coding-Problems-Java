@@ -250,23 +250,23 @@ Box Calculation
 
 4 * 4 Sudoku
 
-(i) / 2 (sqrt 4)
+(i) // 2 (sqrt 4)
 0,0,1,1
 +
-((j) / 2) * 2
-0,0,2,3 
+((j) // 2) * 2
+0,0,2,2 
 
 9 * 9 Sudoku
 
-(i) / 3 (sqrt 9)
+(i) // 3 (sqrt 9)
 0,0,0,1,1,1,2,2,2
 +
-((j) / 3) * 3
+((j) // 3) * 3
 0,0,0,3,3,3,6,6,6
 
 N * N Sudoku
 
-boxIndex = i / sqrt(N) + ((j / sqrt(N)) * sqrt(N))
+boxIndex = i // sqrt(N) + ((j // sqrt(N)) * sqrt(N))
 
 
 '''

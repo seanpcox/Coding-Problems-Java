@@ -44,7 +44,7 @@ Clarifications:
     * The equation is N = (N-1) + (N-2) I believe? Correct
     * What to do in case of an invalid number, example < 0? Return -1
     * This can be done via recursion or dynamic programming, do you have a preference? The most efficient
-    * Results can get very large with fibonacci, can I assume result will be in integer range? Yes
+    * Results can get very large with fibonacci, can I assume result will be in integer range? Yes, also note python can handle very large ints using variable byte length to store
     * Can I assume the first two numbers are 0 and 1? Yes
     * Can I assume the first index is 0, which would result in 0? Yes
     

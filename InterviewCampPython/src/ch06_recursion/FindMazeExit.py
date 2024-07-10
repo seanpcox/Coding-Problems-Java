@@ -113,8 +113,8 @@ Solution:
     * If we are at a zero value we will check if we can go right, down, left, or up
     * This will be determined by a zero being present or not at these positions
     * If we cannot find a zero we will backtrack to the previous position
-    * We use memoization to keep track of positions already visited to avoid cycling in a loop
-    * We will do this memoization in place to keep space complexity to O(1)
+    * We will keep track of positions already visited to avoid cycling in a loop
+    * We will keep track of positions already visited in-place to keep space complexity to O(1)
     * We will use 2 to represent currently visiting and 3 to represent visited
     * We must check we do not go out of the bounds of the puzzle 
 '''        
